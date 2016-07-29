@@ -17,16 +17,20 @@ router.get('/', function(req, res, next) {
       res.render('index', { records: results.records });
     });
 
-/* ADDED CODE FOR POSTGRES DB */
+});
+
+/*------- ADDED CODE FOR POSTGRES DB -------*/
+router.get('/', function(req, res, next) {
+  
   //Query (SELECT) for all in Products table
   var selectProducts = postgres_db.query('SELECT * FROM Products ORDER BY PRICE DESC');
 
   //Log query results to the console
   selectProducts.on('row', function(row) {
     console.log(row);
-  }); 
-
+  });
 });
+/* ----------------------------------------*/ 
 
 /* Display new account form */
 router.get('/new', function(req, res, next) {
