@@ -6,6 +6,9 @@ var Promise = require("bluebird");
 var nforce = require('nforce');
 var org = require('../lib/connection');
 
+var pg = require('pg');
+var postgres_db = require('../lib/postgresConnect');
+
 /* home page. */
 router.get('/', function(req, res, next) {
 
@@ -13,6 +16,15 @@ router.get('/', function(req, res, next) {
     .then(function(results){
       res.render('index', { records: results.records });
     });
+
+/* ADDED CODE FOR POSTGRES DB */
+  //Query (SELECT) for all in Products table
+  var selectProducts = postgres_db.query('SELECT * FROM Products ORDER BY PRICE DESC');
+
+  //Log query results to the console
+  selectProducts.on('row', function(row) {
+    console.log(row);
+  }); 
 
 });
 

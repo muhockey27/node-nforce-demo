@@ -9,6 +9,8 @@ var bodyParser = require('body-parser');
 require('./lib/hbsHelpers');
 // connect to salesforce org
 require('./lib/connection');
+// connect to postgres db
+require('./lib/postgresConnect');
 
 var routes = require('./routes/index');
 
