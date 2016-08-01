@@ -6,8 +6,8 @@ var Promise = require("bluebird");
 var nforce = require('nforce');
 var org = require('../lib/connection');
 
-//var pg = require('pg');
-//var postgres_db = require('../lib/postgresConnect');
+var pg = require('pg');
+var postgres_db = require('../lib/postgresConnect');
 
 /* home page. */
 router.get('/', function(req, res, next) {
@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 });
 
 /*------- ADDED CODE FOR POSTGRES DB -------*/
-/*router.get('/', function(req, res, next) {
+//router.get('/', function(req, res, next) {
   
   //Query (SELECT) for all in Products table
   var selectProducts = postgres_db.query('SELECT * FROM Products ORDER BY PRICE DESC');
@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
   selectProducts.on('row', function(row) {
     console.log(row);
   });
-});*/
+//});
 /* ----------------------------------------*/ 
 
 /* Display new account form */
