@@ -19,7 +19,7 @@
     "CLIENT_SECRET": {
       "description": "Your Connected App's Consumer Secret."
     },
-    "EXTERNAL_DB_URL": {
+    "DATABASE_URL": {
       "description": "Your external postgress DB url."
     }
   }
