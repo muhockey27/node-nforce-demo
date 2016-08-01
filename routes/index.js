@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
       res.render('index', { records: results.records });
     });
 
-});
+//});
 
 /*------- ADDED CODE FOR POSTGRES DB -------*/
 //router.get('/', function(req, res, next) {
@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
   selectProducts.on('row', function(row) {
     console.log(row);
   });
-//});
+});
 /* ----------------------------------------*/ 
 
 /* Display new account form */
